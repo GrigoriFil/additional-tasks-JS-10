@@ -1,0 +1,107 @@
+/* Common styles */
+@import url('./reset.css');
+@import url('simplelightbox/dist/simple-lightbox.min.css');
+
+body {
+  background-color: light-dark(#fafafa, #303030);
+  color: light-dark(#303030, #ffffff);
+}
+
+body[data-color-scheme='light'] {
+  color-scheme: light;
+}
+
+body[data-color-scheme='dark'] {
+  color-scheme: dark;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.page-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.page-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-logo {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+}
+
+.page-logo img {
+  stroke: light-dark(#303030, #ffffff);
+}
+
+.page-logo-txt {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.toggle-container {
+  position: relative;
+  display: flex;
+  width: 50px;
+  height: 20px;
+  border: 1px solid light-dark(#303030, #ffffff);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.toggle-icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: light-dark(#303030, #ffffff);
+  transition: left 250ms linear;
+}
+
+.toggle-checkbox:checked + .toggle-container .toggle-icon {
+  left: calc(100% - 18px);
+}
+
+.gallery-section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gallery-list-item {
+  width: calc((100% - 40px) / 3);
+  transition: transform 250ms linear;
+}
+
+.gallery-list-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-list-img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.sl-overlay {
+  background-color: light-dark(#303030, #ffffff);
+}
